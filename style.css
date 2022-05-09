@@ -1,0 +1,229 @@
+:root {
+    --softCyan: hsl(174, 77%, 80%);
+    --strongCyan: hsl(174, 86%, 45%);
+    --lightGrayishRed: hsl(14, 92%, 95%);
+    --lightrRed: hsl(15, 100%, 70%);
+    --paleBlue: hsl(226, 100%, 87%);
+    --White: hsl(0, 0%, 100%);
+    --veryPaleBlue: hsl(230, 100%, 99%);
+    --lightGrayishBlue: hsl(224, 65%, 95%);
+    --lightGrayishBlue: hsl(223, 50%, 87%);
+    --grayishBlue: hsl(225, 20%, 60%);
+    --darkDesaturatedBlue: hsl(227, 35%, 25%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--lightGrayishBlue);
+    font-family: 'Manrope', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*  */
+
+.card {
+    background-color: var(--White);
+    width: 40%;
+    padding: 50px 40px 30px 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.div-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pageview {
+    color: var(--grayishBlue);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.price {
+    display: flex;
+    color: var(--darkDesaturatedBlue);
+    font-size: 40px;
+    font-weight: 800;
+    align-items: center;
+}
+
+.month {
+    color: var(--grayishBlue);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input[type="range"] {
+    background: linear-gradient(to right, var(--softCyan) 0%, var(--softCyan) 50%, var(--lightGrayishBlue) 50%, var(--lightGrayishBlue) 100%);
+    border-radius: 8px;
+    width: 90%;
+    height: 8px;
+    margin: 30px 0 50px 5%;
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    cursor: pointer;
+    -webkit-appearance: none;
+    background: var(--strongCyan) url(./images/icon-slider.svg) no-repeat center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    box-shadow: 0px 0px 50px var(--strongCyan);
+}
+
+.div-billing {
+    display: flex;
+    padding: 10px 5% 10px 30%;
+    margin-bottom: 30px;
+}
+
+.periodTxt {
+    color: var(--grayishBlue);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin: 0 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--lightGrayishBlue);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--softCyan);
+}
+
+input:checked+.slider:before {
+    animation: fadeIn ease-out 5s;
+    
+    -webkit-transform: translateX(23px);
+    -ms-transform: translateX(23px);
+    transform: translateX(23px);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.discount {
+    color: var(--lightrRed);
+    background-color: var(--lightGrayishRed);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 0 5px;
+}
+
+.div-trial {
+    margin: 0 -40px;
+    border-top: 1px solid var(--lightGrayishBlue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px 0 40px;
+}
+
+.adTexto {
+    color: var(--grayishBlue);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.adTexto img {
+    margin-right: 15px;
+}
+
+.trialBtn {
+    width: 200px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--darkDesaturatedBlue);
+    color: var(--White);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.title {
+    background: url('./images/pattern-circles.svg') no-repeat center;
+    margin: 60px 0;
+    text-align: center;
+    padding: 50px;
+}
+
+.title h1 {
+    font-size: 36px;
+    color: var(--darkDesaturatedBlue);
+    margin-bottom: 15px;
+}
+
+.title h2 {
+    color: var(--grayishBlue);
+    font-size: 18px;
+}
